@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Game</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            color: white;
+        }
+        #game-canvas{
+            background-color: black;
+            cursor: crosshair
+        }
+        ::-webkit-scrollbar{
+           display: none;
+        }
+        .score-div{
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            user-select: none;
+        }
+        .white-modal{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            background-color: white;
+            color: black;
+            border-radius: 50px;
+        }
+        .white-modal h1{
+            font-size: 30px;
+            margin: 20px 0;
+        }
+        .white-modal ul{
+            list-style-type: none;
+            font-size: 18px;
+            line-height: 30px;
+            color: rgba(0,0,0,0.8);
+        }
+        .btn{
+            font-size: 20px;
+            margin: 20px 0;
+            width: 50%;
+            background-color: hsl(200, 100%, 35%);
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+        }
+        .end-score{
+            font-size: 30px;
+            margin-top: 20px;
+        }
+        .white-modal-content{
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="score-div"><span>Score: </span><span id="upper-score">0</span></div>
+
+        <div class="white-modal" id="game-start-modal">
+            <h1>Welcome!</h1>
+            <ul>
+                <li>Your player is the white circle in the center.</li>
+                <li>Use LMB to shoot projectiles.</li>
+                <li>Your player will glow red when you are low on ammo.</li>
+                <li>Your objective is to shoot the enemies and survive as long as you can.</li>
+            </ul>
+            <button id="start-game-button" class="btn">Begin</button>
+        </div>
+
+
+        <div class="white-modal" id="game-over-modal">
+            <div class="white-modal-content"><span>Score: </span><span id="end-score">0</span></div>
+            <button id="play-again-button" class="btn">Play again</button>
+        </div>
+
+
+    <canvas id="game-canvas"></canvas>
+
+    <script src="index.js"></script>
+</body>
+</html>
