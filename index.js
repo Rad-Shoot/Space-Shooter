@@ -151,7 +151,7 @@ function initEnemies(){
         if(enemiesArray.length<=10){
         enemiesArray.push(new Enemy());
         }
-    },1000)
+    },2000)
 }
 
 // Handling frames
